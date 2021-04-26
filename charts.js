@@ -88,11 +88,17 @@ function buildCharts(sample) {
       type:"bar",
       orientation:"h",
       text:label.slice(0,10).reverse(),
+      marker:{color:"blue"},
       automargin:true
     }];
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-    title:"<b>Top 10 Bacteria Cultures Found</b>",
+    title:"<b>Bar Chart</b><br>Top 10 Bacteria Cultures Found<br>",
+    font: {
+      family: "Calibri",
+      size: 18,
+      color: 'black'
+      },
     height: 370,
     width: 500
     };
@@ -112,13 +118,17 @@ function buildCharts(sample) {
         size:value,
         color:id,
         colorscale:"Earth"
-      }
-      
+      },
+      font: {
+        family: "Calibri",
+        size: 18,
+        color: 'black'
+        }
     }];
 
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
-      title:"Bacteria Culture Per Sample",
+      title:"<b>Bubble Chart</b><br>Bacteria Culture Per Sample",
       xaxis: yticks,
       automargin:true,
       hovermode:"closest"
@@ -148,11 +158,11 @@ function buildCharts(sample) {
        type:"indicator",
        mode:"gauge+number",
        title:{
-         text:"<b>Belly Button Washing Frequency</b><br>Scrubs per Week"
+         text:"<b>Gauge Chart</b><br>Belly Button Washing Frequency<br>Scrubs per Week",
        },
        gauge:{
         axis: { range: [null, 10] , tickwidth: 1, tickcolor:"black"},
-        bar: { color:"black" },
+        bar: { color:"blue" },
         steps:[
           {range:[0,2],color:"red"},
           {range:[2,4],color:"orange"},
@@ -167,7 +177,12 @@ function buildCharts(sample) {
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
       height: 370,
-      width: 500
+      width: 500,
+      font: {
+        family: "Calibri",
+        size: 18,
+        color: 'black'
+        }
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
